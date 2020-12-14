@@ -27,13 +27,54 @@
 }
 
 .controls-wrapper {
-    width: 200px;
+    width: 140px;
     margin-left: auto;
     margin-right: auto;
-    height: 80%;
-    background-color: blue;
+    height: 50px;
+    background-color: #5f0014;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 30px;
 }
 
 .mute-btn {
-    
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 0.1px solid gray;
+    border-radius: 20px;
+    background: snow;
+}
+
+.icon-togglebtnsize{
+    font-size: 20px;
+}
+
+.camera-btn {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 0.1px solid gray;
+    border-radius: 20px;
+}
+
+.screenshare-btn {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 0.1px solid gray;
+    border-radius: 20px;
+    background: snow;
+}
+
+.enabled-bg {
+    background: snow;
+    color: black;
+}
+
+.disabled-bg {
+    background: #ff253a;
+    color: white;
 }

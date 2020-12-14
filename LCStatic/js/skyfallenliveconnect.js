@@ -1,6 +1,9 @@
 const LCSocket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const connectedPeers = {}
+var isMuted = false
+
+
 const LCPeer = new Peer(undefined, {
     host: '/',
     port: '3001'
@@ -34,14 +37,14 @@ navigator.mediaDevices.getUserMedia({
 })
 
 LCSocket.on('user-disconnected',userID => {
-    if(connectedPeers[userID]) connectedPeers[userID].close() 
+    if(connectedPeers[userID]) connectedPeers[userID].close()
 })
 
 LCPeer.on('open', PeerUserID => {
     LCSocket.emit('join-room', CURRENT_ROOM_ID, PeerUserID)
 })
 
-function addVideoStream(vidObj, stream){ 
+function addVideoStream(vidObj, stream){
     const video = vidObj[0]
     video.srcObject = stream
     video.className = "user-video"
@@ -68,7 +71,21 @@ function createVideoElement()
     const video = document.createElement('video')
     const videodiv = document.createElement('div')
     videodiv.className = "user-div"
-    video.className = "user-video"  
+    video.className = "user-video"
     videodiv.append(video)
     return [video, videodiv]
+}
+
+function mute_toggle(){
+    mute_icon = document.getElementById("microphone-icon")
+    mute_toggle_button = document.getElementById("mute-btn")
+    if(isMuted){
+        isMuted = false
+        mute_icon.className = "fa fa-microphone icon-togglebtnsize"
+        mute_toggle_button.className = "mute-btn enabled-bg"
+    } else {
+        isMuted = true
+        mute_icon.className = "fa fa-microphone-slash icon-togglebtnsize"
+        mute_toggle_button.className = "mute-btn disabled-bg"
+    }
 }

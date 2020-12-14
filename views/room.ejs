@@ -11,7 +11,7 @@
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="js/skyfallenliveconnect.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/call.css">
-    <link rel="stylesheet" type="text/css" href="css/fa.min.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
 </head>
 <body>
     <div id="video-grid" class="video-grid">
@@ -19,8 +19,9 @@
     </div>
     <div id="meeting-controls" class="meeting-controls">
         <div class="controls-wrapper">
-            <button id="mute-btn" class="mute-btn" name="mute-toggle"><i class="fa fa-microphone"></i></button>
-            <button id="camera-btn" class="camera-btn" name="camera-toggle"><i class="fa fa-video"></i></button>
+            <button id="mute-btn" class="mute-btn enabled-bg" name="mute-toggle" onclick="mute_toggle()"><i id="microphone-icon" class="fa fa-microphone icon-togglebtnsize"></i></button>
+            <button id="camera-btn" class="camera-btn" name="camera-toggle"><i id="camera-icon" class="fa fa-video icon-togglebtnsize"></i></button>
+            <button id="screenshare-btn" class="screenshare-btn" name="share-screen"><i id="sharescreen-icon" class="fa fa-tv icon-togglebtnsize"></i></button>
         </div>
     </div>
 </body>
