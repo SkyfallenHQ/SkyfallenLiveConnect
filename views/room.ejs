@@ -11,10 +11,17 @@
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="js/skyfallenliveconnect.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/call.css">
+    <link rel="stylesheet" type="text/css" href="css/fa.min.css">
 </head>
 <body>
-    <div id="video-grid">
+    <div id="video-grid" class="video-grid">
 
+    </div>
+    <div id="meeting-controls" class="meeting-controls">
+        <div class="controls-wrapper">
+            <button id="mute-btn" class="mute-btn" name="mute-toggle"><i class="fa fa-microphone"></i></button>
+            <button id="camera-btn" class="camera-btn" name="camera-toggle"><i class="fa fa-video"></i></button>
+        </div>
     </div>
 </body>
 </html>

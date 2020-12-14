@@ -6,7 +6,8 @@
   "scripts": {
     "LC": "npm-run-all -p runLCServer runLCPeerServer",
     "runLCServer": "nodemon server.js",
-    "runLCPeerServer": "peerjs --port 3001"
+    "runLCPeerServer": "peerjs --port 3001",
+    "compileCSS": "postcss raw-css/call.css -o LCStatic/css/call.css"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,8 @@
   },
   "homepage": "https://github.com/yigitkeremoktay/SkyfallenLiveConnect#readme",
   "dependencies": {
-    "autoprefixer": "^10.1.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "postcss": "^8.2.1",
     "socket.io": "^3.0.4",
     "tailwindcss": "^2.0.2",
     "uuid": "^8.3.2"

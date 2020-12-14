@@ -6,7 +6,7 @@ const LCPeer = new Peer(undefined, {
     port: '3001'
 })
 
-const userVideo = document.createElement('video')
+const userVideo = createVideoElement()
 userVideo.muted = true
 
 navigator.mediaDevices.getUserMedia({
@@ -18,12 +18,12 @@ navigator.mediaDevices.getUserMedia({
     LCPeer.on('call', call => {
         connectedPeers[call.peer] = call
         call.answer(stream)
-        const video = document.createElement('video')
+        const video = createVideoElement()
         call.on('stream', userVideoStream => {
             addVideoStream(video,userVideoStream)
         })
         call.on('close', () => {
-            video.remove()
+            video[0].remove()
         })
     })
 
@@ -41,22 +41,34 @@ LCPeer.on('open', PeerUserID => {
     LCSocket.emit('join-room', CURRENT_ROOM_ID, PeerUserID)
 })
 
-function addVideoStream(video, stream){
+function addVideoStream(vidObj, stream){ 
+    const video = vidObj[0]
     video.srcObject = stream
+    video.className = "user-video"
     video.addEventListener('loadedmetadata', () => {
         video.play()
     })
-    videoGrid.append(video)
+    videoGrid.append(vidObj[1])
 }
 
 function connectToNewUser(userID, stream){
     const call = LCPeer.call(userID,stream)
-    const video = document.createElement('video')
+    const video = createVideoElement()
     call.on('stream', userVideoStream => {
         addVideoStream(video,userVideoStream)
     })
     call.on('close', () => {
-        video.remove()
+        video[0].remove()
     })
     connectedPeers[userID] = call
+}
+
+function createVideoElement()
+{
+    const video = document.createElement('video')
+    const videodiv = document.createElement('div')
+    videodiv.className = "user-div"
+    video.className = "user-video"  
+    videodiv.append(video)
+    return [video, videodiv]
 }
