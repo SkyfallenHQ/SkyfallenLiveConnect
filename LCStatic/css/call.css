@@ -78,3 +78,7 @@
     background: #ff253a;
     color: white;
 }
+
+.swal-overlay {
+    font-family: sans-serif;
+}

@@ -43,6 +43,13 @@ navigator.mediaDevices.getUserMedia({
     })
 
 })
+    .catch(error => {
+        LCSocket.disconnect()
+        LCVideoPeer.disconnect()
+        LCScreenSharePeer.disconnect()
+        swal("Error","We could not access your camera and microphone. Details:" + error,"error")
+        document.getElementById('body').style.display = "none"
+    })
 
 LCSocket.on('user-disconnected',userID => {
     if(connectedPeers[userID]) connectedPeers[userID].close()

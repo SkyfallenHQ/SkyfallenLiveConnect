@@ -23,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LCStatic/css/call.css" beforeDir="false" afterPath="$PROJECT_DIR$/LCStatic/css/call.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LCStatic/js/skyfallenliveconnect.js" beforeDir="false" afterPath="$PROJECT_DIR$/LCStatic/js/skyfallenliveconnect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/room.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607935332027</updated>
       <workItem from="1607935334132" duration="13594000" />
+      <workItem from="1608017110908" duration="1603000" />
     </task>
     <servers />
   </component>
@@ -113,6 +113,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607935732277">
@@ -147,5 +148,9 @@
     <state width="1771" height="265" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1608012323742" />
     <state width="1379" height="265" key="GridCell.Tab.0.right/0.25.1792.1027@0.25.1792.1027" timestamp="1607944655290" />
     <state width="1379" height="265" key="GridCell.Tab.0.right/0.25.1792.1028@0.25.1792.1028" timestamp="1607939124118" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1608023818318">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1608023818318" />
   </component>
 </project>
