@@ -24,6 +24,12 @@ LCIOServer.on('connection', socket => {
         socket.on('disconnect', () => {
             socket.to(roomID).broadcast.emit('user-disconnected', userID)
         })
+        socket.on('share-disconnected', sharePeerID => {
+            socket.to(roomID).broadcast.emit('user-disconnected',sharePeerID)
+        })
+        socket.on('command', (cmdname,args) => {
+            socket.to(roomID).broadcast.emit(cmdname,args)
+        })
     })
 })
 
